@@ -1,20 +1,23 @@
-/* =====================================================
-   EL AMOR Y LAS RELACIONES ENTRE PAREJAS
-   PROGRAMACIÓN WEB I
-   MAQUETACIÓN FLUIDA TRADICIONAL
+/* =========================================================
+   AMOR Y RELACIONES - styles.css
+   Maquetación fluida tradicional
+   =========================================================
+   SIN Flexbox
+   SIN CSS Grid
+   SIN Media Queries
+   SIN JavaScript
+   SIN Bootstrap / Tailwind / librerías externas
+   Técnicas utilizadas: %, inline-block, float, clearfix
+   ========================================================= */
 
-   Restricciones:
-   - Sin Flexbox
-   - Sin CSS Grid
-   - Sin Media Queries
-   - Sin JavaScript
-   - Sin frameworks externos
-   ===================================================== */
 
+/* =========================================================
+   01. BASE
+   ========================================================= */
 
-/* =====================================================
-   CONFIGURACIÓN GENERAL
-   ===================================================== */
+* {
+    box-sizing: border-box;
+}
 
 html {
     scroll-behavior: smooth;
@@ -23,101 +26,149 @@ html {
 body {
     margin: 0;
     padding: 0;
-    background-color: #fff8fa;
-    color: #382c31;
+    background: #241b2f;
+    color: #f3edf7;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
     line-height: 1.7;
 }
 
-* {
-    box-sizing: border-box;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-}
-
+img,
+video,
 iframe {
     max-width: 100%;
 }
 
+img {
+    display: block;
+}
+
 a {
-    color: #8a3155;
+    color: #f2b6d2;
+    text-decoration: none;
 }
 
-a:hover,
-a:focus {
-    color: #541d34;
+a:hover {
+    text-decoration: underline;
+}
+
+a:focus,
+iframe:focus {
+    outline: 3px solid #f4d06f;
+    outline-offset: 3px;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1.1rem;
+}
+
+strong {
+    color: #ffffff;
+}
+
+code {
+    padding: 0.12rem 0.3rem;
+    background: #33243f;
+    color: #ffd6e6;
+    border-radius: 3px;
+    font-family: "Courier New", Courier, monospace;
 }
 
 
-/* =====================================================
-   CONTENEDOR FLUIDO
-   ===================================================== */
+/* =========================================================
+   02. CONTENEDOR
+   ========================================================= */
 
 .container {
     width: 92%;
-    max-width: 1150px;
-    margin: 0 auto;
+    max-width: 1180px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.clearfix {
+    clear: both;
+    height: 0;
+    line-height: 0;
+    font-size: 0;
 }
 
 
-/* =====================================================
-   ENCABEZADO
-   ===================================================== */
+/* =========================================================
+   03. TIPOGRAFÍA
+   ========================================================= */
 
-.site-header {
-    background-color: #6e2342;
+h1,
+h2,
+h3 {
+    margin-top: 0;
     color: #ffffff;
-    text-align: center;
-    padding: 55px 4% 0 4%;
-    border-bottom: 6px solid #d98ba6;
-}
-
-.site-header .container {
-    width: 92%;
-    max-width: 1150px;
-    margin: 0 auto;
-}
-
-.eyebrow {
-    margin: 0;
-    color: #f5c5d3;
-    font-size: 0.8rem;
-    font-weight: bold;
-    letter-spacing: 3px;
-}
-
-.site-header h1 {
-    width: 95%;
-    max-width: 900px;
-    margin: 12px auto 18px auto;
-    font-size: 2.7rem;
     line-height: 1.2;
-    letter-spacing: 1px;
+}
+
+h1 {
+    margin-bottom: 0.4rem;
+    font-size: 3rem;
+    letter-spacing: -0.04em;
+}
+
+h2 {
+    margin-bottom: 1.3rem;
+    font-size: 2.25rem;
+}
+
+h3 {
+    margin-bottom: 0.75rem;
+    font-size: 1.25rem;
+}
+
+.eyebrow,
+.section-kicker {
+    margin-bottom: 0.6rem;
+    color: #f2b6d2;
+    font-size: 0.78rem;
+    font-weight: bold;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
 }
 
 .subtitle {
-    width: 90%;
-    max-width: 750px;
-    margin: 0 auto 35px auto;
-    color: #fcecf1;
-    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    color: #cdbed4;
+    font-size: 1.15rem;
+}
+
+.hero-lead {
+    color: #fff8fc;
+    font-size: 1.22rem;
 }
 
 
-/* =====================================================
-   NAVEGACIÓN
-   Maquetación tradicional con inline-block
-   ===================================================== */
+/* =========================================================
+   04. HEADER
+   ========================================================= */
+
+.site-header {
+    padding-top: 2.5rem;
+    padding-bottom: 1.4rem;
+    background: #1b1425;
+    border-bottom: 1px solid #594463;
+}
+
+.site-header .container {
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   05. NAVEGACIÓN
+   ========================================================= */
 
 .main-nav {
-    background-color: #4b1930;
-    text-align: center;
-    padding: 14px 2%;
-    border-bottom: 1px solid #32101f;
+    margin-top: 1.2rem;
+    padding-top: 0.8rem;
+    border-top: 1px solid #4c3955;
 }
 
 .main-nav ul {
@@ -128,175 +179,122 @@ a:focus {
 
 .main-nav li {
     display: inline-block;
-    margin: 4px 3px;
+    margin-right: 0.35rem;
+    margin-bottom: 0.45rem;
 }
 
 .main-nav a {
     display: inline-block;
-    padding: 9px 13px;
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: bold;
+    padding: 0.55rem 0.8rem;
+    background: #30203a;
+    border: 1px solid #644a6b;
     border-radius: 5px;
+    color: #fff5fa;
+    font-size: 0.9rem;
 }
 
-.main-nav a:hover,
-.main-nav a:focus {
-    background-color: #d98ba6;
-    color: #4b1930;
-}
-
-
-/* =====================================================
-   CONTENIDO PRINCIPAL
-   ===================================================== */
-
-main {
-    padding: 0 0 55px 0;
-}
-
-.content-section {
-    padding: 60px 0;
-}
-
-.content-section.alt {
-    background-color: #f9e9ee;
-}
-
-.content-section h2 {
-    color: #6e2342;
-    font-size: 2rem;
-    line-height: 1.3;
-    margin: 0 0 25px 0;
-    padding-bottom: 12px;
-    border-bottom: 3px solid #d98ba6;
-}
-
-.content-section h3 {
-    color: #8a3155;
-    font-size: 1.3rem;
+.main-nav a:hover {
+    background: #49304e;
+    border-color: #f2b6d2;
+    text-decoration: none;
 }
 
 
-/* =====================================================
-   HERO
-   ===================================================== */
+/* =========================================================
+   06. HERO
+   ========================================================= */
 
 .hero {
-    background-color: #fff8fa;
-    padding: 70px 0;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    background: #2d2038;
+    border-bottom: 1px solid #594463;
 }
 
 .hero-content {
-    width: 90%;
-    max-width: 900px;
-    margin: 0 auto;
-    background-color: #ffffff;
-    border: 1px solid #ead5dc;
-    border-left: 7px solid #8a3155;
-    border-radius: 0 12px 12px 0;
-    padding: 40px;
-    box-shadow: 0 5px 15px rgba(70, 30, 45, 0.08);
+    width: 78%;
+    max-width: 850px;
 }
 
-.hero-content h2 {
-    margin-top: 0;
-}
-
-.hero-lead {
-    color: #4b3039;
-    font-size: 1.15rem;
-}
-
-.section-kicker {
-    margin: 0 0 7px 0;
-    color: #a9486b;
-    font-size: 0.78rem;
-    font-weight: bold;
-    letter-spacing: 2px;
+.hero h2 {
+    margin-bottom: 1rem;
+    font-size: 3.1rem;
 }
 
 
-/* =====================================================
-   BOTÓN
-   ===================================================== */
+/* =========================================================
+   07. BOTÓN
+   ========================================================= */
 
 .button {
     display: inline-block;
-    margin-top: 15px;
-    padding: 11px 20px;
-    background-color: #6e2342;
-    color: #ffffff;
-    text-decoration: none;
+    margin-top: 0.5rem;
+    padding: 0.75rem 1.1rem;
+    background: #f2b6d2;
+    color: #251727;
+    border: 2px solid #f2b6d2;
+    border-radius: 5px;
     font-weight: bold;
-    border-radius: 6px;
 }
 
-.button:hover,
-.button:focus {
-    background-color: #541d34;
-    color: #ffffff;
+.button:hover {
+    background: #ffe6f0;
+    color: #251727;
+    text-decoration: none;
 }
 
 
-/* =====================================================
-   ARTÍCULOS
-   ===================================================== */
+/* =========================================================
+   08. SECCIONES
+   ========================================================= */
+
+.content-section {
+    padding-top: 4.2rem;
+    padding-bottom: 4.2rem;
+    background: #241b2f;
+    border-bottom: 1px solid #4d3a56;
+}
+
+.content-section.alt {
+    background: #2d2038;
+}
 
 .article-wide {
-    width: 100%;
-    background-color: #ffffff;
-    border: 1px solid #ead5dc;
-    border-radius: 12px;
-    padding: 28px;
-    margin-bottom: 25px;
-    box-shadow: 0 4px 12px rgba(70, 30, 45, 0.07);
-}
-
-.article-wide p:last-child {
-    margin-bottom: 0;
+    width: 86%;
+    max-width: 100%;
+    margin-bottom: 1.5rem;
 }
 
 
-/* =====================================================
-   COLUMNAS
-   Maquetación tradicional con FLOAT
-   ===================================================== */
+/* =========================================================
+   09. COLUMNAS CON FLOAT
+   ========================================================= */
 
 .column {
-    float: left;
     width: 48%;
-    margin-bottom: 25px;
+    margin-bottom: 1.5rem;
 }
 
 .column-left {
-    margin-right: 2%;
+    float: left;
+    margin-right: 4%;
 }
 
 .column-right {
-    margin-left: 2%;
+    float: left;
 }
 
 
-/* =====================================================
-   TARJETAS
-   ===================================================== */
+/* =========================================================
+   10. TARJETAS
+   ========================================================= */
 
 .card {
-    width: 100%;
     min-height: 100%;
-    background-color: #ffffff;
-    border: 1px solid #ead5dc;
-    border-top: 5px solid #a9486b;
-    border-radius: 10px;
-    padding: 25px;
-    box-shadow: 0 4px 12px rgba(70, 30, 45, 0.07);
-}
-
-.card h3 {
-    color: #6e2342;
-    margin-top: 0;
+    padding: 1.5rem;
+    background: #33243f;
+    border: 1px solid #604a68;
+    border-radius: 7px;
 }
 
 .card p:last-child {
@@ -304,77 +302,34 @@ main {
 }
 
 .card-list {
-    padding-left: 22px;
+    margin: 0;
+    padding-left: 1.2rem;
 }
 
 .card-list li {
-    margin-bottom: 9px;
+    margin-bottom: 0.6rem;
 }
 
-
-/* =====================================================
-   TARJETAS DE ALERTA
-   ===================================================== */
-
-.danger-card {
-    border-top-color: #7a2946;
-    background-color: #fffafb;
-}
-
-.danger-card h3 {
-    color: #7a2946;
-}
-
-
-/* =====================================================
-   TARJETAS PEQUEÑAS
-   Maquetación tradicional con inline-block
-   ===================================================== */
-
-.small-card {
-    display: inline-block;
-    vertical-align: top;
-    width: 23%;
-    margin: 0 0.7% 25px 0.7%;
-    padding: 22px;
-    background-color: #ffffff;
-    border: 1px solid #ead5dc;
-    border-top: 5px solid #a9486b;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(70, 30, 45, 0.07);
-}
-
-.small-card h3 {
-    margin-top: 0;
-    color: #6e2342;
-    font-size: 1.05rem;
-}
-
-.small-card p {
+.card-list li:last-child {
     margin-bottom: 0;
 }
 
-.last-card {
-    margin-right: 0;
+.danger-card {
+    border-left: 4px solid #e7a1b9;
 }
 
 
-/* =====================================================
-   AVISOS / NOTICE
-   ===================================================== */
+/* =========================================================
+   11. AVISOS
+   ========================================================= */
 
 .notice {
-    background-color: #fff0f4;
-    border: 1px solid #e5b7c6;
-    border-left: 6px solid #8a3155;
-    border-radius: 0 10px 10px 0;
-    padding: 25px;
-    margin-top: 30px;
-}
-
-.notice h3 {
-    margin-top: 0;
-    color: #6e2342;
+    clear: both;
+    margin-top: 1.5rem;
+    padding: 1.2rem 1.4rem;
+    background: #30233a;
+    border-left: 4px solid #f2b6d2;
+    border-radius: 4px;
 }
 
 .notice p:last-child {
@@ -382,340 +337,257 @@ main {
 }
 
 
-/* =====================================================
-   DESTACADOS
-   ===================================================== */
-
-.destacado {
-    background-color: #fff0f4;
-    border: 1px solid #e5b7c6;
-    border-radius: 10px;
-    padding: 25px;
-    margin: 30px 0;
-}
-
-.destacado strong {
-    color: #6e2342;
-}
-
-
-/* =====================================================
-   LISTAS
-   ===================================================== */
-
-ul,
-ol {
-    padding-left: 28px;
-}
-
-li {
-    margin-bottom: 9px;
-}
-
-.numbered {
-    background-color: #ffffff;
-    border: 1px solid #ead5dc;
-    border-radius: 10px;
-    padding: 25px 35px 25px 50px;
-    margin: 30px 0;
-}
-
-.numbered li {
-    margin-bottom: 12px;
-}
-
-
-/* =====================================================
-   CITAS
-   ===================================================== */
-
-.quote {
-    margin: 30px 0;
-    padding: 25px 30px;
-    background-color: #f7e5eb;
-    border-left: 6px solid #8a3155;
-    border-radius: 0 8px 8px 0;
-    color: #4b3039;
-    font-style: italic;
-}
-
-.quote p {
-    margin: 0;
-}
-
-blockquote {
-    margin: 30px 0;
-    padding: 25px 30px;
-    background-color: #f7e5eb;
-    border-left: 6px solid #8a3155;
-    border-radius: 0 8px 8px 0;
-    color: #4b3039;
-    font-style: italic;
-}
-
-blockquote p {
-    margin: 0;
-}
-
-cite {
-    display: block;
-    margin-top: 12px;
-    color: #6e2342;
-    font-size: 0.9rem;
-    font-style: normal;
-    font-weight: bold;
-}
-
-
-/* =====================================================
-   TABLA
-   ===================================================== */
+/* =========================================================
+   12. TABLA
+   ========================================================= */
 
 .table-wrap {
     width: 100%;
     overflow-x: auto;
-    margin: 30px 0;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
 }
 
-.table-wrap table {
+table {
     width: 100%;
+    min-width: 650px;
     border-collapse: collapse;
-    background-color: #ffffff;
+    background: #33243f;
 }
 
-.table-wrap caption {
-    padding: 12px;
-    color: #6e2342;
+caption {
+    margin-bottom: 0.8rem;
+    color: #f6eaf1;
     font-weight: bold;
     text-align: left;
 }
 
-.table-wrap th,
-.table-wrap td {
-    border: 1px solid #dfc2cb;
-    padding: 14px;
+th,
+td {
+    padding: 0.9rem;
+    border: 1px solid #604a68;
     text-align: left;
     vertical-align: top;
 }
 
-.table-wrap th {
-    background-color: #6e2342;
+th {
+    background: #412d49;
     color: #ffffff;
 }
 
-.table-wrap tr:nth-child(even) {
-    background-color: #fff1f4;
+td {
+    color: #e8dce9;
+}
+
+tbody tr:nth-child(even) {
+    background: #2b2035;
+}
+
+tbody tr:hover {
+    background: #49324e;
 }
 
 
-/* =====================================================
-   VIDEO
-   ===================================================== */
+/* =========================================================
+   13. LISTA NUMERADA
+   ========================================================= */
 
-.video-box {
-    width: 100%;
-    margin: 35px 0;
-    padding: 25px;
-    background-color: #f6e0e7;
-    border: 1px solid #e4c5ce;
-    border-radius: 12px;
-    text-align: center;
+.numbered {
+    width: 88%;
+    max-width: 950px;
+    margin: 1.5rem 0 0;
+    padding-left: 1.5rem;
 }
 
-.video-box iframe {
-    display: block;
-    width: 96%;
-    max-width: 900px;
-    height: 500px;
-    margin: 0 auto 20px auto;
-    border: 0;
-    border-radius: 10px;
+.numbered li {
+    margin-bottom: 1rem;
+    padding-left: 0.35rem;
 }
 
-.video-placeholder {
-    width: 96%;
-    max-width: 900px;
-    min-height: 300px;
-    margin: 0 auto 20px auto;
-    padding: 80px 20px;
-    background-color: #6e2342;
-    color: #ffffff;
-    border-radius: 10px;
-}
-
-.video-placeholder p {
-    margin: 8px 0;
+.numbered li::marker {
+    color: #f2b6d2;
     font-weight: bold;
 }
 
-.placeholder-small {
-    font-size: 0.9rem;
-    font-weight: normal !important;
-    color: #f5c5d3;
+
+/* =========================================================
+   14. TARJETAS PEQUEÑAS
+   ========================================================= */
+
+.small-card {
+    display: inline-block;
+    vertical-align: top;
+    width: 22%;
+    min-height: 150px;
+    margin-right: 4%;
+    margin-bottom: 1.2rem;
+    padding: 1.1rem;
+    background: #33243f;
+    border: 1px solid #604a68;
+    border-radius: 6px;
 }
 
-.video-box figcaption {
-    color: #735963;
-    font-size: 0.9rem;
+.small-card.last-card {
+    margin-right: 0;
 }
 
-.nota-video {
-    color: #735963;
-    font-size: 0.9rem;
+.small-card h3 {
+    font-size: 1.05rem;
+}
+
+.small-card p {
+    margin-bottom: 0;
+    color: #cdbed4;
+    font-size: 0.92rem;
 }
 
 
-/* =====================================================
-   GALERÍA
-   Maquetación tradicional con inline-block
-   ===================================================== */
+/* =========================================================
+   15. GALERÍA
+   ========================================================= */
 
 .gallery {
     width: 100%;
-    text-align: center;
-    margin-top: 35px;
+    margin-top: 1.5rem;
+    font-size: 0;
 }
 
 .gallery-item {
     display: inline-block;
     vertical-align: top;
-    width: 22%;
-    margin: 1.3%;
-    box-sizing: border-box;
-    background-color: #ffffff;
-    border: 1px solid #ead5dc;
-    border-radius: 10px;
-    padding: 10px;
+    width: 23%;
+    margin: 0 2.66% 2rem 0;
+    padding: 0;
+    background: #33243f;
+    border: 1px solid #604a68;
+    border-radius: 6px;
+    overflow: hidden;
+    font-size: 16px;
+}
+
+.gallery-item:nth-child(4) {
+    margin-right: 0;
 }
 
 .gallery-item img {
-    display: block;
     width: 100%;
     height: auto;
-    border-radius: 7px;
+    border-bottom: 1px solid #604a68;
 }
 
 .gallery-item figcaption {
-    margin-top: 10px;
-    padding: 5px;
-    color: #735963;
-    font-size: 0.9rem;
+    padding: 0.8rem;
+    color: #eee1ea;
+    font-size: 0.92rem;
+}
+
+.gallery-item:hover {
+    border-color: #f2b6d2;
+}
+
+
+/* =========================================================
+   16. CITA
+   ========================================================= */
+
+.quote {
+    width: 80%;
+    max-width: 100%;
+    margin: 2rem 0;
+    padding: 1.5rem 1.7rem;
+    background: #33243f;
+    border-left: 4px solid #f2b6d2;
+}
+
+.quote p {
+    margin-bottom: 0.7rem;
+    color: #ffffff;
+    font-size: 1.15rem;
     font-style: italic;
 }
 
-
-/* =====================================================
-   EMOCIONES
-   ===================================================== */
-
-.emocion {
-    border-top-color: #8a3155;
+.quote cite {
+    color: #cdbed4;
+    font-size: 0.9rem;
 }
 
 
-/* =====================================================
-   REFLEXIÓN
-   ===================================================== */
+/* =========================================================
+   17. PODCAST
+   ========================================================= */
 
-.reflexion {
-    background-color: #541d34;
-    color: #ffffff;
-    padding: 40px;
-    border-radius: 12px;
-    border-top: 5px solid #d98ba6;
-    box-shadow: 0 5px 15px rgba(50, 15, 30, 0.15);
+.video-box {
+    width: 86%;
+    max-width: 100%;
+    margin: 2rem auto 0;
+    padding: 1rem;
+    background: #33243f;
+    border: 1px solid #604a68;
+    border-radius: 7px;
 }
 
-.reflexion h2 {
-    color: #ffffff;
-    border-bottom-color: #d98ba6;
+.video-box iframe {
+    display: block;
+    width: 100%;
+    height: 420px;
+    max-width: 100%;
+    border: 0;
+    background: #09070b;
 }
 
-.reflexion .section-kicker {
-    color: #f4b9ca;
+.video-placeholder {
+    width: 100%;
+    min-height: 320px;
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+    background: #17111d;
+    border: 1px dashed #765a7c;
+    text-align: center;
 }
 
-.reflexion blockquote {
-    background-color: #6e2342;
-    color: #ffffff;
-    border-left-color: #d98ba6;
+.video-placeholder p {
+    margin-bottom: 0.4rem;
+    color: #f2b6d2;
+    font-weight: bold;
+    letter-spacing: 0.12em;
 }
 
-.reflexion cite {
-    color: #f5c5d3;
+.video-placeholder .placeholder-small {
+    color: #cdbed4;
+    font-size: 0.9rem;
+    letter-spacing: 0;
+    font-weight: normal;
 }
 
-.reflexion p:last-child {
-    margin-bottom: 0;
+.video-box figcaption {
+    margin-top: 0.8rem;
+    color: #cdbed4;
+    font-size: 0.9rem;
 }
 
 
-/* =====================================================
-   FUENTES
-   ===================================================== */
+/* =========================================================
+   18. FUENTE
+   ========================================================= */
 
 .source-credit {
-    color: #735963;
+    width: 86%;
+    padding-top: 1rem;
+    border-top: 1px solid #604a68;
+    color: #cdbed4;
     font-size: 0.9rem;
-    margin-top: 25px;
 }
 
 
-/* =====================================================
-   PIE DE PÁGINA
-   ===================================================== */
+/* =========================================================
+   19. ELEMENTOS SEMÁNTICOS
+   ========================================================= */
 
-.site-footer {
-    background-color: #361222;
-    color: #ffffff;
-    text-align: center;
-    padding: 40px 5%;
-    border-top: 5px solid #8a3155;
-}
-
-.site-footer p {
-    margin: 6px 0;
-}
-
-.site-footer a {
-    color: #f5c5d3;
-}
-
-.site-footer a:hover,
-.site-footer a:focus {
-    color: #ffffff;
-}
-
-
-/* =====================================================
-   ADAPTACIÓN FLUIDA TRADICIONAL
-   Sin Media Queries
-   Sin Flexbox
-   Sin Grid
-
-   Se utilizan:
-   - porcentajes
-   - max-width
-   - inline-block
-   - float
-   - clearfix
-   ===================================================== */
-
-.clearfix::after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-
-/* =====================================================
-   ELEMENTOS FLUIDOS
-   ===================================================== */
-
-video,
-iframe,
-img {
-    max-width: 100%;
+article,
+section,
+figure,
+figcaption {
+    display: block;
 }
 
 figure {
@@ -724,17 +596,90 @@ figure {
 }
 
 
-/* =====================================================
-   ACCESIBILIDAD BÁSICA
-   ===================================================== */
+/* =========================================================
+   20. LISTAS
+   ========================================================= */
 
-a:focus,
-button:focus {
-    outline: 3px solid #d98ba6;
-    outline-offset: 3px;
+ul,
+ol {
+    color: #e8dce9;
+}
+
+li::marker {
+    color: #f2b6d2;
 }
 
 
-/* =====================================================
-   FIN DEL ARCHIVO
-   ===================================================== */
+/* =========================================================
+   21. DESBORDAMIENTO
+   ========================================================= */
+
+.site-header,
+.hero,
+.content-section,
+.site-footer {
+    overflow: hidden;
+}
+
+.card,
+.notice,
+.small-card,
+.gallery-item,
+.video-box {
+    overflow-wrap: break-word;
+}
+
+
+/* =========================================================
+   22. PROPORCIONES
+   ========================================================= */
+
+.hero p {
+    max-width: 900px;
+}
+
+.content-section p {
+    max-width: 920px;
+}
+
+
+/* =========================================================
+   23. PIE DE PÁGINA
+   ========================================================= */
+
+.site-footer {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    background: #17111d;
+    color: #b7a8bd;
+    text-align: center;
+}
+
+.site-footer p {
+    margin-bottom: 0.4rem;
+}
+
+.site-footer strong {
+    color: #ffffff;
+}
+
+.site-footer a {
+    color: #f2b6d2;
+}
+
+
+/* =========================================================
+   24. ACCESIBILIDAD
+   ========================================================= */
+
+::selection {
+    background: #f2b6d2;
+    color: #251727;
+}
+
+
+/* =========================================================
+   FIN DEL CSS
+   Maquetación fluida clásica:
+   porcentajes + inline-block + float + clearfix.
+   ========================================================= */
